@@ -49,6 +49,13 @@
     
     <link rel="stylesheet" href="styles.css?v=35" />
     
+    <!-- Auto-redirect old domain to official yogawithhansika.vercel.app -->
+    <script>
+      if (window.location.hostname === "yoga-website-iota-ten.vercel.app") {
+        window.location.replace("https://yogawithhansika.vercel.app" + window.location.pathname + window.location.search + window.location.hash);
+      }
+    </script>
+    
     <!-- Vercel Web Analytics & Speed Insights -->
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

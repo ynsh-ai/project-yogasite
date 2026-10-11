@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="IU81PpOqTANfaf8BqXqaZrhY5MT27pTysKuFhrdwQn0" />
     <meta http-equiv="refresh" content="0; url=yogasite/" />
-    <script>window.location.replace("yogasite/");</script>
+    <script>
+      if (window.location.hostname === "yoga-website-iota-ten.vercel.app") {
+        window.location.replace("https://yogawithhansika.vercel.app/yogasite/");
+      } else {
+        window.location.replace("yogasite/");
+      }
+    </script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
