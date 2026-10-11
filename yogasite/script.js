@@ -251,34 +251,64 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* --------------------------------------------------------------------------
-     5. Certificate Lightbox Modal
+     5. Universal Lightbox Modal (Certificate & Student Review Screenshots)
      -------------------------------------------------------------------------- */
-  const openCertBtn = document.getElementById("open-cert-btn");
   const certModal = document.getElementById("cert-modal");
   const closeCertBtn = document.getElementById("cert-modal-close");
   const certBackdrop = document.getElementById("cert-modal-backdrop");
+  const modalTitle = document.getElementById("cert-modal-title");
+  const modalSub = document.getElementById("cert-modal-sub");
+  const modalImg = document.getElementById("cert-modal-img");
+  let lastFocusedEl = null;
 
-  function openCertificateModal() {
+  function openModal(imgSrc, title, subtitle, triggerEl) {
     if (!certModal) return;
+    lastFocusedEl = triggerEl || document.activeElement;
+    if (modalImg && imgSrc) modalImg.src = imgSrc;
+    if (modalTitle && title) modalTitle.textContent = title;
+    if (modalSub && subtitle) modalSub.textContent = subtitle;
+
     certModal.hidden = false;
     document.body.style.overflow = "hidden";
     closeCertBtn?.focus();
   }
 
-  function closeCertificateModal() {
+  function closeModal() {
     if (!certModal) return;
     certModal.hidden = true;
     document.body.style.overflow = "";
-    openCertBtn?.focus();
+    if (lastFocusedEl && typeof lastFocusedEl.focus === "function") {
+      lastFocusedEl.focus();
+    }
   }
 
-  openCertBtn?.addEventListener("click", openCertificateModal);
-  closeCertBtn?.addEventListener("click", closeCertificateModal);
-  certBackdrop?.addEventListener("click", closeCertificateModal);
+  // Certificate button trigger
+  const openCertBtn = document.getElementById("open-cert-btn");
+  openCertBtn?.addEventListener("click", () => {
+    openModal(
+      "images/patanjali-training-letter-enhanced.jpg",
+      "Patanjali Wellness Certificate of Internship",
+      "University of Patanjali, Haridwar · Yogacharya Intern (2022–2023)",
+      openCertBtn
+    );
+  });
+
+  // Review screenshot triggers
+  document.querySelectorAll(".review-screenshot-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const imgSrc = btn.getAttribute("data-img");
+      const title = btn.getAttribute("data-title");
+      const sub = btn.getAttribute("data-sub");
+      openModal(imgSrc, title, sub, btn);
+    });
+  });
+
+  closeCertBtn?.addEventListener("click", closeModal);
+  certBackdrop?.addEventListener("click", closeModal);
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && certModal && !certModal.hidden) {
-      closeCertificateModal();
+      closeModal();
     }
   });
 });

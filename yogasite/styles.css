@@ -1408,39 +1408,153 @@ p:last-child {
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 6: Student Testimonial
+   SECTION 6: Student Reviews & Transformations Grid
    -------------------------------------------------------------------------- */
-.quote {
-  padding: clamp(64px, 8vw, 96px) clamp(24px, 5vw, 48px);
-  max-width: 860px;
+.reviews-section {
+  padding: clamp(64px, 9vw, 112px) clamp(20px, 4vw, 48px);
+  background: var(--ivory-alt);
+  border-top: 1px solid var(--border-neutral);
+  border-bottom: 1px solid var(--border-neutral);
+}
+
+.reviews-grid {
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border-neutral);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
   position: relative;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-xs);
 }
 
-.quote-mark {
-  font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 6vw, 5.5rem);
-  line-height: 1;
-  color: var(--terracotta);
-  opacity: 0.55;
-  margin-bottom: -10px;
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--sage-green);
+  box-shadow: var(--shadow-hover);
 }
 
-.quote blockquote {
-  font-size: clamp(1.28rem, 2.4vw, 1.85rem);
-  line-height: 1.45;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--forest-green);
-  margin-bottom: 20px;
+.review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
 }
 
-.quote p {
-  font-size: 0.95rem;
+.review-badge {
+  font-size: 0.72rem;
   font-weight: 600;
-  color: var(--text-subtle);
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badge-tulsi {
+  background: var(--sage-light);
+  color: var(--forest-green);
+  border: 1px solid rgba(125, 139, 114, 0.25);
+}
+
+.badge-sage {
+  background: #E8ECE5;
+  color: #364F41;
+  border: 1px solid rgba(125, 139, 114, 0.25);
+}
+
+.badge-clay {
+  background: var(--terracotta-light);
+  color: var(--terracotta-dark);
+  border: 1px solid rgba(185, 120, 92, 0.25);
+}
+
+.review-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  color: var(--forest-green);
+  font-weight: 500;
+}
+
+.review-rating {
+  color: var(--terracotta);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.review-text {
+  font-size: 0.93rem;
+  line-height: 1.68;
+  color: var(--forest-green);
+  font-style: italic;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.review-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.review-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-author-info strong {
+  font-size: 0.92rem;
+  color: var(--forest-green);
+}
+
+.review-author-info span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.review-screenshot-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--forest-green);
+  background: var(--ivory-light);
+  border: 1px solid var(--border-neutral);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.review-screenshot-btn:hover {
+  background: var(--forest-green);
+  color: var(--white);
+  border-color: var(--forest-green);
+}
+
+@media (max-width: 960px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    max-width: 580px;
+  }
 }
 
 /* --------------------------------------------------------------------------
