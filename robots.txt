@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yogawithhansika.vercel.app/yogasite/sitemap.xml
+Sitemap: https://yogawithhansika.vercel.app/sitemap.xml
