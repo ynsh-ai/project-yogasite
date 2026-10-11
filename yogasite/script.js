@@ -162,6 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.classList.toggle("active", isActive);
       dot.setAttribute("aria-selected", String(isActive));
     });
+
+    const captionEl = document.getElementById("slide-caption-text");
+    if (captionEl && slides[currentSlideIndex]) {
+      const caption = slides[currentSlideIndex].getAttribute("data-caption");
+      if (caption) captionEl.textContent = caption;
+    }
   }
 
   function nextSlide() {
