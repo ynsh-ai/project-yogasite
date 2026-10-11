@@ -15,13 +15,38 @@
     <meta property="og:site_name" content="Yoga with Hansika" />
     
     <title>Yoga with Hansika — Authentic Indian Yogic Practice &amp; Healing</title>
+    <link rel="canonical" href="https://yogawithhansika.vercel.app/yogasite/" />
+    <meta property="og:url" content="https://yogawithhansika.vercel.app/yogasite/" />
+
+    <!-- Google Structured Data (Schema.org) for Google Search Ranking -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Yoga with Hansika",
+      "alternateName": ["Hans Yoga", "Yoga with Hansika Rajput"],
+      "description": "Personalized 1-on-1 and small group online yoga sessions with Hansika Rajput. Authentic Indian yogic wisdom, breathwork (Pranayama), alignment (Asana), and somatic relaxation.",
+      "url": "https://yogawithhansika.vercel.app/yogasite/",
+      "founder": {
+        "@type": "Person",
+        "name": "Hansika Rajput",
+        "jobTitle": "Certified Yogacharya & Yoga Instructor",
+        "alumniOf": "University of Patanjali",
+        "knowsAbout": ["Hatha Yoga", "Vinyasa Flow", "Pranayama", "Yoga Therapy", "Meditation"]
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Worldwide"
+      }
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
     
-    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="styles.css?v=35" />
     
     <!-- Vercel Web Analytics & Speed Insights -->
     <script>
@@ -176,14 +201,70 @@
       <section class="about-section" id="about">
         <div class="about-container">
           <div class="about-card-visual reveal-left">
-            <div class="avatar-frame">
-              <div class="avatar-bg">
-                <span class="avatar-initials">HR</span>
-                <span class="avatar-lotus" aria-hidden="true">🪷</span>
-              </div>
-              <div class="experience-badge">
-                <strong>Certified</strong>
-                <span>Yogic Guide</span>
+            <div class="teacher-slideshow-wrap" role="region" aria-roledescription="carousel" aria-label="Hansika Rajput internship training certificate and photos slideshow">
+              <div class="slideshow-frame">
+                <!-- Slides Container -->
+                <div class="slideshow-track-container" id="teacher-slideshow">
+                  <div class="slideshow-slider" id="teacher-slider">
+                    <!-- Slide 1: Patanjali Training & Internship Letter (FIRST) -->
+                    <div class="slide-item active" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 3: Official Patanjali Wellness Internship Certificate">
+                      <div class="slide-media-wrapper">
+                        <img
+                          src="images/patanjali-training-letter-enhanced.jpg"
+                          alt="Official Certificate of Internship from Patanjali Wellness Limited for Hansika Rajput"
+                          class="slide-img cert-img"
+                          loading="eager"
+                          decoding="async"
+                        />
+                        <button class="cert-expand-btn" id="open-cert-btn" type="button" aria-label="View full size training letter">
+                          <svg viewBox="0 0 20 20" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M5 3a2 2 0 00-2 2v2a1 1 0 002 0V5h2a1 1 0 000-2H5zM15 3a1 1 0 000 2h2v2a1 1 0 102 0V5a2 2 0 00-2-2h-2zM3 15a1 1 0 002 0v-2a1 1 0 10-2 0v2zm12 2a1 1 0 000-2h-2a1 1 0 100 2h2z"/></svg>
+                          <span>Full Letter</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Slide 2: Hansika at Lotus sculpture -->
+                    <div class="slide-item" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 3: Hansika Rajput at Patanjali Yogpeeth Lotus">
+                      <div class="slide-media-wrapper">
+                        <img
+                          src="images/hansika-lotus-posture-enhanced.jpg"
+                          alt="Hansika Rajput at Patanjali Yogpeeth Lotus sculpture inscribed with Yoga Sutras"
+                          class="slide-img"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Slide 3: With revered Mentor at University of Patanjali -->
+                    <div class="slide-item" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 3: Hansika Rajput with university mentor">
+                      <div class="slide-media-wrapper">
+                        <img
+                          src="images/hansika-mentor-patanjali-enhanced.jpg"
+                          alt="Hansika Rajput with her faculty mentor at University of Patanjali campus"
+                          class="slide-img"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Minimal Navigation Arrows -->
+                <button class="slideshow-arrow prev" id="slide-prev-btn" aria-label="Previous photo" type="button">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="slideshow-arrow next" id="slide-next-btn" aria-label="Next photo" type="button">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+
+                <!-- Minimal Navigation Dots -->
+                <div class="slideshow-dots" id="slide-dots-container" role="tablist" aria-label="Select photo slide">
+                  <button class="dot-btn active" role="tab" aria-selected="true" aria-label="Slide 1: Internship Letter" data-index="0"></button>
+                  <button class="dot-btn" role="tab" aria-selected="false" aria-label="Slide 2: Yogic Guide" data-index="1"></button>
+                  <button class="dot-btn" role="tab" aria-selected="false" aria-label="Slide 3: Mentorship" data-index="2"></button>
+                </div>
               </div>
             </div>
           </div>
@@ -198,8 +279,8 @@
               <div class="cred-item">
                 <span class="cred-icon">🌿</span>
                 <div>
-                  <strong>Traditional Roots</strong>
-                  <p>Authentic Hatha &amp; Vinyasa flows designed for modern lifestyle needs.</p>
+                  <strong>Traditional Roots &amp; Certification</strong>
+                  <p>PG Diploma in Yoga Science (University of Patanjali) &amp; certified Yogacharya training at Patanjali Wellness, Haridwar.</p>
                 </div>
               </div>
               <div class="cred-item">
@@ -717,6 +798,21 @@
       <a href="#top" class="back-to-top">Back to top ↑</a>
     </footer>
 
+    <!-- Certificate Lightbox Modal -->
+    <div id="cert-modal" class="cert-modal" role="dialog" aria-modal="true" aria-label="Patanjali Wellness Training Certificate" hidden>
+      <div class="cert-modal-backdrop" id="cert-modal-backdrop"></div>
+      <div class="cert-modal-dialog">
+        <button class="cert-modal-close" id="cert-modal-close" aria-label="Close training letter dialog" type="button">✕</button>
+        <div class="cert-modal-header">
+          <h3>Patanjali Wellness Certificate of Internship</h3>
+          <p>University of Patanjali, Haridwar · Yogacharya Intern (2022–2023)</p>
+        </div>
+        <div class="cert-modal-body">
+          <img src="images/patanjali-training-letter-enhanced.jpg" alt="Patanjali Wellness Certificate of Internship for Hansika Rajput full document" class="cert-modal-img" />
+        </div>
+      </div>
+    </div>
+
     <!-- Floating WhatsApp Widget Button -->
     <aside class="whatsapp-widget" aria-label="Direct WhatsApp Contact">
       <a
@@ -736,6 +832,6 @@
       </a>
     </aside>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=35"></script>
   </body>
 </html>
